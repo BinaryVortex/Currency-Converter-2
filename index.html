@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container" role="main">
+        <h1>Currency Converter</h1>
+        <div class="converter">
+            <div class="input-group">
+                <label for="amount">Amount:</label>
+                <input type="text" id="amount" aria-label="Amount to convert" title="Enter the amount to convert">
+                <span id="amount-error" class="error"></span>
+            </div>
+            <div class="input-group">
+                <label for="fromCurrency">From:</label>
+                <select id="fromCurrency" aria-label="Convert from currency" title="Select the currency to convert from"></select>
+            </div>
+            <div class="input-group">
+                <label for="toCurrency">To:</label>
+                <select id="toCurrency" aria-label="Convert to currency" title="Select the currency to convert to"></select>
+            </div>
+            <button onclick="convert()" aria-label="Convert currencies"><i class="fas fa-exchange-alt"></i> Convert</button>
+            <div id="result" aria-live="polite"></div>
+            <div id="loading" class="loading" aria-hidden="true"><i class="fas fa-spinner fa-spin"></i> Loading...</div>
+            <button onclick="reverseCurrencies()" aria-label="Reverse currencies"><i class="fas fa-retweet"></i> Reverse</button>
+        </div>
+        <button id="darkModeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

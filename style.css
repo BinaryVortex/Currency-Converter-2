@@ -1,0 +1,164 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #000;
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('GOLD.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px) brightness(0.7);
+    animation: zoom 20s infinite alternate, gradient 15s ease infinite;
+    z-index: -1;
+}
+
+@keyframes zoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.2); }
+}
+
+@keyframes gradient {
+    0% { filter: hue-rotate(0deg); }
+    50% { filter: hue-rotate(180deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.converter .input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.converter label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.converter input, .converter select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    appearance: none; /* Removes default arrow in select elements */
+}
+
+.converter select {
+    color: #000;
+    background: #fff;
+}
+
+.converter option {
+    color: #000;
+    background: #fff;
+}
+
+.error {
+    color: red;
+    font-size: 0.9rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.converter button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ff8c00;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.converter button:hover {
+    background-color: #ffa500;
+    transform: scale(1.05);
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+.loading {
+    display: none;
+    color: #fff;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+#darkModeToggle {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    transition: transform 0.3s ease;
+}
+
+#darkModeToggle:hover {
+    transform: scale(1.1);
+}
+
+.dark-mode {
+    background: #121212;
+}
+
+.dark-mode .container {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode h1, .dark-mode label, .dark-mode #result, .dark-mode .loading {
+    color: #bbb;
+}
+
+.dark-mode .converter input, .dark-mode .converter select, .dark-mode .converter button {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
